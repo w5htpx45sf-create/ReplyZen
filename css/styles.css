@@ -262,6 +262,11 @@ a {
   margin: 2rem 0 1rem;
 }
 
+.pricing-grid.single {
+  grid-template-columns: minmax(280px, 520px);
+  justify-content: center;
+}
+
 .pricing-card {
   background: var(--white);
   border: 1px solid var(--border);
