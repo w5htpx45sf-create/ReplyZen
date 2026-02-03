@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReplyZen — Tableau de bord</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">ReplyZen</div>
+      <nav class="nav-links">
+        <span id="user-email" class="helper-text"></span>
+        <button class="button ghost" id="logout-button" type="button">Se déconnecter</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <section class="panel">
+      <h2>Générer une réponse</h2>
+      <div class="form-group">
+        <label for="client-name">Nom ou identifiant client</label>
+        <input id="client-name" type="text" placeholder="Ex : Cabinet Dupont" list="client-list" />
+        <datalist id="client-list"></datalist>
+      </div>
+      <div class="form-group">
+        <label for="client-memory">Mémoire client (contexte, précédentes interactions)</label>
+        <textarea id="client-memory" placeholder="Ex : souhaite des réponses rapides, sensible au délai."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="client-message">Message client à traiter</label>
+        <textarea id="client-message" placeholder="Collez le message reçu."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tone">Ton de réponse</label>
+        <select id="tone">
+          <option>Professionnel neutre</option>
+          <option>Chaleureux & empathique</option>
+          <option>Ferme & cadrant</option>
+          <option>Court & efficace</option>
+          <option>Premium</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Cas d’usage rapides</label>
+        <div class="use-case-grid" id="use-case-grid">
+          <button class="use-case-button" type="button" data-use="Annulation / report">Annulation / report</button>
+          <button class="use-case-button" type="button" data-use="Client mécontent">Client mécontent</button>
+          <button class="use-case-button" type="button" data-use="Rappel de cadre / limites">Rappel de cadre / limites</button>
+          <button class="use-case-button" type="button" data-use="Relance">Relance</button>
+          <button class="use-case-button" type="button" data-use="Retard de réponse">Retard de réponse</button>
+          <button class="use-case-button" type="button" data-use="Refus professionnel">Refus professionnel</button>
+        </div>
+      </div>
+
+      <button class="button primary" id="generate-button" type="button">Générer la réponse</button>
+
+      <div class="form-group" style="margin-top: 1.5rem;">
+        <label>Réponse générée</label>
+        <div class="response-box" id="response-box">Votre réponse apparaîtra ici.</div>
+      </div>
+
+      <div class="response-actions">
+        <button class="button secondary" id="copy-button" type="button">Copier la réponse</button>
+        <button class="button ghost" id="regenerate-button" type="button">Régénérer</button>
+      </div>
+      <p class="helper-text" id="status-message"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Historique des réponses</h2>
+      <div class="form-group">
+        <label for="history-filter">Filtrer par client</label>
+        <input id="history-filter" type="text" placeholder="Nom du client" />
+      </div>
+      <div class="history-list" id="history-list"></div>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
