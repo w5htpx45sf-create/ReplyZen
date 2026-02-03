@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReplyZen — Connexion</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="auth-container">
+    <div class="auth-card">
+      <a href="index.html" class="eyebrow">← Retour au site</a>
+      <h1>Accédez à votre assistant ReplyZen</h1>
+      <p class="helper-text">Connectez-vous ou créez un compte pour accéder au tableau de bord.</p>
+
+      <div class="auth-tabs" role="tablist">
+        <button class="tab-button active" data-tab="login" type="button">Connexion</button>
+        <button class="tab-button" data-tab="signup" type="button">Inscription</button>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email professionnel</label>
+          <input id="login-email" type="email" required placeholder="vous@entreprise.fr" />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Mot de passe</label>
+          <input id="login-password" type="password" required placeholder="Votre mot de passe" />
+        </div>
+        <button class="button primary" type="submit">Se connecter</button>
+      </form>
+
+      <form id="signup-form" hidden>
+        <div class="form-group">
+          <label for="signup-email">Email professionnel</label>
+          <input id="signup-email" type="email" required placeholder="vous@entreprise.fr" />
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Mot de passe</label>
+          <input id="signup-password" type="password" required placeholder="Choisissez un mot de passe" />
+        </div>
+        <button class="button primary" type="submit">Créer mon compte</button>
+      </form>
+
+      <p class="helper-text" id="auth-message"></p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
